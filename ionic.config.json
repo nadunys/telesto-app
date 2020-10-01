@@ -1,0 +1,7 @@
+{
+  "name": "ionic-globe",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
