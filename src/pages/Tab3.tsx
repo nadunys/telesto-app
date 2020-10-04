@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   IonContent,
   IonHeader,
@@ -34,7 +34,6 @@ const Tab3: React.FC = () => {
             <IonItemDivider>
               <IonAvatar>
                 <IonCol>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" />
                 </IonCol>
               </IonAvatar>
             </IonItemDivider>
