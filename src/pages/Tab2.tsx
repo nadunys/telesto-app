@@ -5,7 +5,7 @@ import './Tab2.css';
 
 const Tab2: React.FC = () => {
   return (
-    <IonPage>
+    <IonPage className="page">
       <IonHeader>
         <IonToolbar>
           <IonTitle id="satName">Sat Name</IonTitle>
@@ -19,6 +19,7 @@ const Tab2: React.FC = () => {
         </IonToolbar>
         </IonHeader>
         <DetailsCard />
+        <DetailsCard/>
       </IonContent>
     </IonPage>
   );
