@@ -49,7 +49,7 @@ const App: React.FC = () => (
           <IonTabButton tab="" href="/tab3">
             <IonIcon icon={informationCircle} />            
           </IonTabButton>
-        </IonTabBar>
+        </IonTabBar> 
       </IonTabs>
     </IonReactRouter>
   </IonApp>
