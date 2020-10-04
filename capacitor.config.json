@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "ionic-globe",
+  "appName": "telesto",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
