@@ -10,7 +10,7 @@ const Tab2: React.FC = () => {
         <IonToolbar>
           <IonTitle id="satName">Sat Name</IonTitle>
         </IonToolbar>
-      </IonHeader>
+      </IonHeader> */}
       <IonContent fullscreen>
         
       <IonHeader collapse="condense">-
