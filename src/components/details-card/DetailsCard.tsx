@@ -1,7 +1,12 @@
-import { IonCard, IonContent, IonImg, IonGrid, IonRow, IonCol, IonCardContent, IonCardHeader } from "@ionic/react";
+import { IonCard, IonContent, IonImg, IonTitle, IonLoading, IonIcon, IonRouterOutlet, IonTabBar, IonTabButton } from "@ionic/react";
 import React, { Component } from "react";
 import { Observatory } from "../../services/models";
 import LocationsService from "../../services/locations.service";
+import { Redirect, Route } from 'react-router-dom';
+import { IonReactRouter } from '@ionic/react-router';
+import { arrowBackCircle, camera } from "ionicons/icons";
+import Tab1 from "../../pages/Tab1";
+import Tab2 from "../../pages/Tab2";
 
 type Props = {
   obsId: string;
@@ -34,6 +39,18 @@ export default class DetailsCard extends Component<Props, State> {
           position: "absolute",
           zIndex: 10000,
         }}>
+
+          <IonTabBar color="dark">
+          <IonRouterOutlet>
+          </IonRouterOutlet>
+          <IonTabButton href="/tab1">
+            <IonIcon icon={arrowBackCircle} />
+          </IonTabButton>
+          <IonTabButton href="/tab2">
+            <IonIcon icon={camera} />            
+          </IonTabButton>
+          
+        </IonTabBar>
           <IonCard>
             <IonImg src="https://media.wired.com/photos/5b52582f59269e342890a45a/1:1/w_1800,h_1800,c_limit/Satellite_FHM56J.jpg" />
           </IonCard>
