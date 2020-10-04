@@ -22,4 +22,13 @@ export default class LocationsService {
 
         throw new Error('getting observatory data failed');
     }
+
+    async getObservatoryDetalis(id: string): Promise<any>{
+        const result = await this.http.post<ServerResponse>('/observatories/get-obs-by-id', {id});
+        if(result.status){
+            return result.data;
+        }
+
+        throw new Error('Getting obseravotery data by id failed');
+    }
 }

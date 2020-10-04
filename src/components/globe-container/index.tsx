@@ -1,7 +1,13 @@
-import React, { Component } from "react";
+import {
+  IonButton,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+} from "@ionic/react";
+import React, { Component, ReactNode } from "react";
 import Globe from "react-globe.gl";
 import LocationsService from "../../services/locations.service";
-import Alert from "./alert";
+import DetailsCard from "../details-card/DetailsCard";
 
 type State = {
   observatories: Array<{
@@ -15,11 +21,19 @@ type State = {
   }>;
   alertData: any;
   showAlert: boolean;
+  showDetails: boolean;
 };
 
 type Props = {};
 
-export default class GlobeContainer extends Component<Props, State> {
+type ReadonlyProps = {
+  children?: ReactNode;
+};
+
+export default class GlobeContainer extends Component<
+  Props & ReadonlyProps,
+  State
+> {
   locationsService = new LocationsService();
   ref: React.RefObject<any> = React.createRef();
 
@@ -29,6 +43,7 @@ export default class GlobeContainer extends Component<Props, State> {
       observatories: [],
       showAlert: false,
       alertData: undefined,
+      showDetails: false,
     };
   }
 
@@ -77,25 +92,58 @@ export default class GlobeContainer extends Component<Props, State> {
   render() {
     return (
       <>
+        {this.state.showAlert && (
+          <IonCard
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              top: 0,
+              zIndex: 1000,
+            }}
+            color="dark"
+          >
+            <IonCardHeader style={{ marginBottom: "-15px" }}>
+              <IonCardHeader>{this.state.alertData.name}</IonCardHeader>
+            </IonCardHeader>
+
+            <IonCardContent>
+              {`Longitude: ${this.state.alertData.lng}, Latitude: ${this.state.alertData.lat}`}
+              <br />
+              <IonButton
+                color="danger"
+                onClick={() => this.setState({ showAlert: false })}
+              >
+                Cancel
+              </IonButton>
+              <IonButton
+                color="primary"
+                onClick={() => this.setState({ showDetails: true })}
+              >
+                View More
+              </IonButton>
+            </IonCardContent>
+          </IonCard>
+        )}
+        {this.state.showDetails && <DetailsCard />}
         <Globe
-          ref={this.ref}
           globeImageUrl="https://dsuarezv.github.io/satellite-tracker/earthmap-high.602450bd.jpg"
           bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
           backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
           hexBinPointsData={this.state.observatories}
           hexBinPointWeight="pop"
           hexAltitude={(d) => d.sumWeight * 6e-8}
-          hexBinResolution={3}
+          hexBinResolution={2}
           hexBinMerge={false}
-          hexTopColor={() => "#FF0000"}
+          hexTopColor={() => "#ffffff"}
+          hexSideColor={() => "#383a3e00"}
           enablePointerInteraction={true}
           onHexClick={(hex, event) =>
             this.setState({ alertData: hex.points[0], showAlert: true })
           }
+          animateIn={true}
+          waitForGlobeReady={true}
         />
-        {this.state.showAlert && (
-          <Alert showAlert={this.state.showAlert} data={this.state.alertData} />
-        )}
       </>
     );
   }
