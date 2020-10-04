@@ -1,34 +1,35 @@
-import { IonCard, IonCol, IonContent, IonGrid, IonImg, IonRow, IonTitle } from '@ionic/react'
+import { IonCard, IonContent, IonImg, IonTitle } from '@ionic/react'
 import React, { Component } from 'react'
-
+import './DetailsCard.css';
 export default class DetailsCard extends Component {
     render() {
         return (
-            <div>
-                <IonCard>
-                    <IonImg src="https://media.wired.com/photos/5b52582f59269e342890a45a/1:1/w_1800,h_1800,c_limit/Satellite_FHM56J.jpg" />
-                </IonCard>
+            <div className="background-image">
+                {/* <IonImg src="https://unblast.com/wp-content/uploads/2018/10/Sky-Stars-Pattern.jpg" /> */}
                 
-                <IonCard>
-                    <IonGrid>
-                        <IonRow>
-                            <IonTitle>Version</IonTitle>
-                            <IonContent id="version">Version</IonContent>
-                        </IonRow>
-                        <IonRow>
-                            <IonTitle>Description</IonTitle>
-                            <IonContent id="description"></IonContent>
-                        </IonRow>
-                        <IonRow>
-                            <IonTitle>Release Date</IonTitle>
-                            <IonContent id="date"></IonContent>
-                        </IonRow>
-                        <IonRow>
-                            <IonTitle>Location/ Observetory Region</IonTitle>
-                            <IonContent id="location"></IonContent>  
-                        </IonRow>
-                    </IonGrid>
-                </IonCard>
+                <div className="page">
+                    
+                    <IonCard>
+                        <IonImg src="https://media.wired.com/photos/5b52582f59269e342890a45a/1:1/w_1800,h_1800,c_limit/Satellite_FHM56J.jpg" />
+                    </IonCard>
+                    
+                    <IonCard class="odd-card">
+                        <IonTitle className="title">Version</IonTitle>
+                        <IonContent id="version">Version</IonContent>
+                    </IonCard>
+                    <IonCard class="description-card">
+                        <IonTitle className="title">Description</IonTitle>
+                        <IonContent id="description">ajshdhguaydguag</IonContent>
+                    </IonCard>
+                    <IonCard class="odd-card">
+                        <IonTitle className="title">Release Date</IonTitle>
+                        <IonContent id="date">00/00/0000</IonContent>
+                    </IonCard>
+                    <IonCard class="location-card">
+                        <IonTitle className="title">Location</IonTitle>
+                        <IonContent id="location">the place/ orbital</IonContent>
+                    </IonCard>
+                </div>  
             </div>
         )
     }
