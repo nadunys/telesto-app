@@ -1,7 +1,7 @@
 h1{
     margin-top: 0px;
     padding: 30px;
-    color: #00FFFF
+    color: thistle;
 }
 
 h2{
@@ -14,6 +14,7 @@ h5{
 }
 
 p{
+    padding-left: 35px;
     color: #696969
 }
 
@@ -21,7 +22,7 @@ IonList{
     padding-inline-start: 20px;
 }
 
-img{
-    
-    
-}
+
+/* .back{
+    background-color: #D2691E;
+} */
