@@ -4,20 +4,17 @@ import {
   IonHeader,
   IonPage,
   IonToolbar,
-  IonAvatar,
-  IonItemGroup,
-  IonItemDivider,
   IonBackButton,
   IonButtons,
-  IonCol,
 } from "@ionic/react";
 import "./Tab3.css";
+import AboutUs from '../components/about-us/AboutUs';
 
 const Tab3: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color="dark">
           <h2>About Us</h2>
           <br />
           <IonButtons color="danger">
@@ -27,49 +24,8 @@ const Tab3: React.FC = () => {
       </IonHeader>
 
       <IonContent>
-        <IonCol>
-          <h1>name of app</h1>
-
-          <IonItemGroup>
-            <IonItemDivider>
-              <IonAvatar>
-                <IonCol>
-                </IonCol>
-              </IonAvatar>
-            </IonItemDivider>
-
-            <h5>The Short</h5>
-
-            <p>Main perpose</p>
-
-            <h5>The long</h5>
-
-            <p>Full description</p>
-
-            <h5>Get in touch</h5>
-
-            <p>
-              Mail us
-              <br />
-              jayan.jayatissa@gmail.com
-              <br />
-              <br />
-              Contact us
-              <br />
-              +94719610650
-              <br />
-              <br />
-              Address
-              <IonCol class="ion-float-left">
-                First line
-                <br />
-                Second line
-                <br />
-                Third line
-              </IonCol>
-            </p>
-          </IonItemGroup>
-        </IonCol>
+        <AboutUs>
+        </AboutUs>
       </IonContent>
     </IonPage>
   );
