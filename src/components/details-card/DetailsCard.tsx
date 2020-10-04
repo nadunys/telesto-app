@@ -1,4 +1,4 @@
-import { IonCard, IonContent, IonImg, IonTitle, IonLoading, IonIcon, IonRouterOutlet, IonTabBar, IonTabButton } from "@ionic/react";
+import { IonCard, IonContent, IonImg, IonTitle, IonLoading, IonIcon, IonRouterOutlet, IonTabBar, IonTabButton, IonCardHeader, IonCardContent } from "@ionic/react";
 import React, { Component } from "react";
 import { Observatory } from "../../services/models";
 import LocationsService from "../../services/locations.service";
