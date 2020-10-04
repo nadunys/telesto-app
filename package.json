@@ -49,5 +49,5 @@
   "devDependencies": {
     "@capacitor/cli": "2.4.2"
   },
-  "description": "An Ionic project"
+  "description": "Telesto"
 }

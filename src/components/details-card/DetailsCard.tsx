@@ -1,4 +1,4 @@
-import { IonCard, IonContent, IonImg, IonTitle, IonLoading } from "@ionic/react";
+import { IonCard, IonContent, IonImg, IonTitle } from "@ionic/react";
 import React, { Component } from "react";
 import "./DetailsCard.css";
 import { Observatory } from "../../services/models";
@@ -13,11 +13,11 @@ type State={
 }
 export default class DetailsCard extends Component <Props, State> {
 
-  locationsService = new LocationsService();
-  
-  constructor(props: any) {
-    super(props);
-  }
+    locationsService = new LocationsService();
+    
+    constructor(props: any) {
+      super(props);
+    }
 
   async componentDidMount() {
     try {
