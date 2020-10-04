@@ -8,4 +8,5 @@ export interface Observatory {
   endTime: string;
   resourceId?: string;
   coordinates?: GSE[];
+  moreData: any;
 }
