@@ -125,7 +125,7 @@ export default class GlobeContainer extends Component<
             </IonCardContent>
           </IonCard>
         )}
-        {this.state.showDetails && <DetailsCard />}
+        {this.state.showDetails && <DetailsCard obsId={this.state.alertData.id} />}
         <Globe
           globeImageUrl="https://dsuarezv.github.io/satellite-tracker/earthmap-high.602450bd.jpg"
           bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
